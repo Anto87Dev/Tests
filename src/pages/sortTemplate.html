@@ -1,0 +1,38 @@
+
+<p style="font-family: customFont !important; font-weight:bold; font-size:18px; padding-left:16px; margin:15px 0px 0px 0px; color:#ea5b0c;">Ordina per: </p>
+
+<ion-list radio-group [(ngModel)]="sortCriteria" (ionChange)="sort()" class="popover-page" style="margin: -1px 0 10px;">
+        
+    <ion-item>
+            
+        <ion-label style="font-family: customFont !important;">Prezzo crescente</ion-label>
+          
+        <ion-radio value="0"></ion-radio>
+        
+    </ion-item>
+        
+    <ion-item>
+            
+        <ion-label style="font-family: customFont !important;">Prezzo decrescente</ion-label>
+          
+        <ion-radio value="1"></ion-radio>
+        
+    </ion-item>
+        
+    <ion-item>
+            
+        <ion-label style="font-family: customFont !important;">Ordine alfabetico A - Z</ion-label>
+          
+        <ion-radio value="2"></ion-radio>
+        
+    </ion-item>
+    
+    <ion-item>
+            
+        <ion-label style="font-family: customFont !important;">Ordine alfabetico Z - A</ion-label>
+            
+        <ion-radio value="3"></ion-radio>
+        
+    </ion-item>
+      
+</ion-list>

@@ -1,0 +1,169 @@
+<!--
+  Generated template for the ConfrontoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    
+    <ion-title>
+      
+        <p style="color:white;">Confronto</p>
+    
+    </ion-title>
+  
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <ion-grid>
+     
+        <ion-row>
+          
+          <ion-col col-3></ion-col>
+    
+          <ion-col *ngFor="let prodotto of array_prod; let i=index;" align-items-center>
+            
+            <div><img src="{{prodotto.immagine}}" style="width:220px; margin: auto; display: block;"></div>
+
+            <p style="font-size:15px; text-align:center; ">{{prodotto.nome}}</p>
+
+            <p id="prezzo">{{prodotto.prezzo}} €</p>
+            
+            <button ion-button full clear id="rm_button" (tap)="rimuovi(prodotto, i)"><ion-icon name="md-trash"></ion-icon><span style="margin-left:5px;">rimuovi</span></button>
+
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row id="row_title">
+          
+          <p id="title">Dettagli tecnici</p>
+
+        </ion-row>
+
+        <ion-row id="element_row">
+          
+          <ion-col col-3 id="label"><p style="text-align:center;">Modalità di gioco</p></ion-col>          
+
+          <ion-col id="element_col" *ngFor="let prodotto of array_prod;"><p style="text-align:center;">{{prodotto.mod_gioco}}</p></ion-col>
+    
+         <!--  <ion-col id="element_col"><p style="text-align:center;">si</p></ion-col>
+
+          <ion-col id="element_col"><p style="text-align:center;">si</p></ion-col>
+    
+          <ion-col id="element_col"><p style="text-align:center;">no</p></ion-col>
+ -->
+        </ion-row>
+
+        <ion-row id="element_row">
+          
+          <ion-col col-3 id="label"><p style="text-align:center;">Colore del prodotto</p></ion-col>          
+
+          <ion-col id="element_col" *ngFor="let prodotto of array_prod;"><p style="text-align:center;">{{prodotto.col_prod}}</p></ion-col>
+    
+          <!-- <ion-col id="element_col"><p style="text-align:center;">Nero/Argento</p></ion-col>
+
+          <ion-col id="element_col"><p style="text-align:center;">Bianco</p></ion-col>
+    
+          <ion-col id="element_col"><p style="text-align:center;">Nero/Argento</p></ion-col> -->
+
+        </ion-row>
+
+        <ion-row id="element_row">
+          
+          <ion-col col-3 id="label"><p style="text-align:center;">Wi-Fi Diretto</p></ion-col>          
+
+          <ion-col id="element_col" *ngFor="let prodotto of array_prod;"><p style="text-align:center;">{{prodotto.wifi}}</p></ion-col>
+    
+          <!-- <ion-col id="element_col"><p style="text-align:center;">si</p></ion-col>
+
+          <ion-col id="element_col"><p style="text-align:center;">si</p></ion-col>
+    
+          <ion-col id="element_col"><p style="text-align:center;">no</p></ion-col> -->
+
+        </ion-row>
+
+        <ion-row id="element_row">
+          
+          <ion-col col-3 id="label"><p style="text-align:center;">Smart TV</p></ion-col>          
+
+          <ion-col id="element_col" *ngFor="let prodotto of array_prod;"><p style="text-align:center;">{{prodotto.smart_tv}}</p></ion-col>
+<!--     
+          <ion-col id="element_col"><p style="text-align:center;">si</p></ion-col>
+
+          <ion-col id="element_col"><p style="text-align:center;">si</p></ion-col>
+    
+          <ion-col id="element_col"><p style="text-align:center;">no</p></ion-col> -->
+
+        </ion-row>
+
+        <ion-row id="row_title">
+          
+          <p id="title">Display</p>
+
+        </ion-row>
+
+        <ion-row id="element_row">
+          
+          <ion-col col-3 id="label"><p style="text-align:center;">Dimensione schermo</p></ion-col>          
+
+          <ion-col id="element_col" *ngFor="let prodotto of array_prod;"><p style="text-align:center;">{{prodotto.dim_schermo}}</p></ion-col>
+    
+          <!-- <ion-col id="element_col"><p style="text-align:center;">43''</p></ion-col>
+
+          <ion-col id="element_col"><p style="text-align:center;">40''</p></ion-col>
+    
+          <ion-col id="element_col"><p style="text-align:center;">32''</p></ion-col> -->
+
+        </ion-row>
+
+        <ion-row id="element_row">
+          
+          <ion-col col-3 id="label"><p style="text-align:center;">Formato</p></ion-col>          
+
+          <ion-col id="element_col" *ngFor="let prodotto of array_prod;"><p style="text-align:center;">{{prodotto.formato}}</p></ion-col>
+    
+          <!-- <ion-col id="element_col"><p style="text-align:center;">16:9</p></ion-col>
+
+          <ion-col id="element_col"><p style="text-align:center;">16:9</p></ion-col>
+    
+          <ion-col id="element_col"><p style="text-align:center;">16:9</p></ion-col> -->
+
+        </ion-row>
+
+        <ion-row id="element_row">
+          
+          <ion-col col-3 id="label"><p style="text-align:center;">Forma dello schermo</p></ion-col>          
+
+          <ion-col id="element_col" *ngFor="let prodotto of array_prod;"><p style="text-align:center;">{{prodotto.forma}}</p></ion-col>
+    
+          <!-- <ion-col id="element_col"><p style="text-align:center;">piatto</p></ion-col>
+
+          <ion-col id="element_col"><p style="text-align:center;">piatto</p></ion-col>
+    
+          <ion-col id="element_col"><p style="text-align:center;">piatto</p></ion-col> -->
+
+        </ion-row>
+
+        <ion-row id="element_row">
+          
+          <ion-col col-3 id="label"><p style="text-align:center;">Tecnologia display</p></ion-col>          
+
+          <ion-col id="element_col" *ngFor="let prodotto of array_prod;"><p style="text-align:center;">{{prodotto.tec_displ}}</p></ion-col>
+    
+          <!-- <ion-col id="element_col"><p style="text-align:center;">led</p></ion-col>
+
+          <ion-col id="element_col"><p style="text-align:center;">led</p></ion-col>
+    
+          <ion-col id="element_col"><p style="text-align:center;">led</p></ion-col> -->
+
+        </ion-row>
+
+    </ion-grid>
+
+</ion-content>

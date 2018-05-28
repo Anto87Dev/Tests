@@ -1,0 +1,102 @@
+page-scheda-prodotto {
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        
+        color: #ffffff;
+
+    }
+
+    #header{
+
+        padding: 16px 16px 16px 14px!important;
+    
+        font-weight: bold;
+    
+        font-size: 22px;
+    
+    }
+
+    ion-slides {
+    
+        height: 25%;
+
+    }
+    
+    .card-content-md {
+        
+        padding: 5px 16px 30px 14px!important;
+    
+    }
+
+    .card-md {
+     
+        margin: 0px!important;
+     
+        border-radius: 2px;
+     
+        width: 100%!important;
+
+    }
+    
+    #prezzo{
+    
+        text-align: center;
+        color: #ff5f00;
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 6px;
+        margin-right: 5px;
+        
+    
+    }
+
+    #img{
+
+        display:block; 
+        
+        margin:0 auto; 
+
+        width:50%; 
+    
+        height:auto;
+    
+    }
+
+    .swiper-pagination-bullet-active {
+
+        background: #ff5f00!important;
+        opacity: 1!important;
+        
+    }
+
+    .section {
+        background: #fff;
+        color: #000;
+        margin-bottom: 4px;
+    }
+    .section-active {
+        background: #e8e7e6;
+       
+    }
+ 
+    .child {
+        background: #ffefd4;
+        color: #ff6f18;
+        margin-bottom: 4px;
+        margin-left:60px;
+    }
+    
+    .child > .item-inner{
+
+        border-bottom: 0px solid #dedede!important;
+
+    }
+
+    
+    #textChild{
+
+        margin-left: 18px;
+
+    }
+
+}

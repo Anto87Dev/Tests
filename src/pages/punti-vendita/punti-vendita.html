@@ -1,0 +1,107 @@
+<ion-header>
+  
+  <ion-navbar>
+  
+    <button ion-button menuToggle>
+
+      <ion-icon name="menu" style="color:white;"></ion-icon>
+
+    </button>
+
+    <ion-title>
+      
+      <img id="img" src="assets/img/logo.png" style="display: block; margin-left: auto; margin-right: auto; width: 30%;">
+    
+    </ion-title>
+  
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div class="my-overlay" padding [hidden]="overlayHidden" (tap)="hide()">
+
+    <img id="tutorial" src="assets/img/swipe.png" width="100" height="100" />
+
+    <p id="testo_tutorial">Swipe per vedere le opzioni</p>
+
+  </div>
+
+        <div id="map" [hidden]="mappa"></div>
+
+        <ion-list [hidden]="lista">
+        
+          <ion-item-sliding *ngFor="let item of items; let i = index;">
+      
+            <button ion-item (tap)="scheda(item, i)" id="item_{{i}}">
+          
+              <div item-start style="margin-left:5px; text-align: center;">
+                     
+                <p><img src="assets/img/distanza.png" width="40" height="40"></p>
+                
+                <p style="color:#ff5f00; font-weight:bold; text-align:center;"><!-- {{i}},5 --> {{item.distanza}} km</p>
+                
+              </div>
+                    
+              <p id="nome_punto_vendita">{{item.nome}}</p>
+              
+              <p id="indirizzo_punto_vendita"><ion-icon name="md-pin"></ion-icon> {{item.indirizzo}}</p>
+      
+              <p id="citta_punto_vendita">{{item.cap}} {{item.citta}} {{item.provincia}}</p>
+      
+              <p id="indirizzo_punto_vendita"><ion-icon name="ios-call"></ion-icon> {{item.recapito}}</p>
+
+            </button>
+
+            <ion-item id="button_{{i}}" class="itemCallMap">
+                
+              <button ion-button clear id="btnCallMap" (tap)="chiama(item.recapito)">
+                
+                <ion-icon name="call" id="icon_button"></ion-icon>
+            
+              </button>
+            
+              <button ion-button clear id="btnCallMap" style="margin-right: 40px;" (tap)="indicazioni(item.indirizzo)">
+              
+                <ion-icon name="md-map" id="icon_button"></ion-icon>
+          
+              </button>            
+            
+            </ion-item>
+            
+            <ion-item-options side="left">
+      
+              <button ion-button expandable color="primary" (tap)="chiama(item.recapito)">
+      
+                <ion-icon name="md-call" id="icon_sliding_button"></ion-icon>
+      
+              </button>
+            
+            </ion-item-options>
+      
+            <ion-item-options side="right">
+      
+              <button ion-button expandable color="primary" (tap)="indicazioni(item.indirizzo)">
+      
+                <ion-icon name="md-map" id="icon_sliding_button"></ion-icon>
+      
+              </button>
+      
+            </ion-item-options>
+            
+          </ion-item-sliding>
+      
+          <ion-item id="last">
+      
+          </ion-item>
+      
+        </ion-list>
+      
+        <ion-fab left bottom [hidden]="!overlayHidden"> 
+      
+          <button ion-fab (tap)="cambiaVista()"><ion-icon name="{{icona}}"></ion-icon></button>
+          
+        </ion-fab>
+
+</ion-content>

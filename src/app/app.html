@@ -1,1 +1,46 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    
+    <ion-header>
+        
+      <ion-toolbar class="logo_menu">
+      
+          <ion-title><span style="color:white;">Menu</span></ion-title>
+  
+      </ion-toolbar>
+     
+    </ion-header>
+        
+    <ion-content>
+              
+        <ion-list>
+    
+          <button id="voce_menu" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        
+            <ion-icon name={{p.image}} item-start style="color:#ea5b0c; margin-right:0px;"></ion-icon> 
+            
+            <span style="font-size: 16px; font-weight: bold;"> {{p.title}} </span>
+        
+          </button>
+        
+        </ion-list>
+      
+      </ion-content>
+  
+      <ion-footer>
+          <ion-toolbar>
+        
+            <ion-title>
+              
+              <p style="color:white; font-size: 14px;">Delta Informatica Service s.r.l</p>
+              
+            </ion-title>
+          
+          </ion-toolbar>
+        
+        </ion-footer>
+    
+    </ion-menu>
+    
+    <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+    <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+  

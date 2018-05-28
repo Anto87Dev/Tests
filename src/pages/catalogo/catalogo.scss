@@ -1,0 +1,266 @@
+page-catalogo {
+
+    #options{
+
+        width: 100%; 
+        
+        text-align: center;
+    
+    }
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        
+        color: #ffffff;
+
+    }
+
+    .toolbar-background-md {
+    
+        border-color: #ff5f00;
+    
+        background: #ff5f00;
+    
+    }
+
+    .swiper-pagination-bullet-active {
+
+            background: #ff5f00!important;
+            opacity: 1!important;
+            
+        }
+
+        .swiper-pagination-bullet {
+    border-radius: 100%;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #ff5f00;
+    opacity: .2;
+    pointer-events: auto;
+}
+
+#img{
+
+    display:block; 
+    
+    margin:0 auto; 
+    
+    width:200px; 
+    
+    height:auto;
+
+}
+
+#header{
+
+    padding: 16px 16px 0px 16px!important;
+
+    font-weight: bold;
+
+    font-size: 22px;
+
+}
+
+.card-content-md {
+    
+    padding: 5px 16px 30px 16px!important;
+
+}
+
+.scroll-content{
+    // Previene che lo scroll-content cambi automaticamente margin-top ogni volta che si torna in questa pagina
+    margin-top: 141px!important;
+
+}
+
+#prezzo{
+
+    /* float: right;
+    color: #ff5f00;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-right: 5px;
+    margin-bottom: 5px; */
+
+    color: #ff5f00;
+    font-size: 18px;
+}
+
+#sconto{
+    color: #d9d9d9;
+    font-size: 15px;
+}
+
+#prezzo_1{
+
+    color: #ff5f00;
+    font-size: 18px;
+}
+
+#sconto_1{
+    color: #d9d9d9;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+.search_toolbar > .toolbar-background-md {
+    
+    border-color: #ffffff;
+
+    background: #ffffff;
+
+}
+
+#card_title{
+
+    text-transform: uppercase;
+
+}
+
+.card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+      height: 125px;
+    }
+  
+    .card-title {
+      position: absolute;
+      top: 35%;
+      font-size: 1.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #000;
+      text-align: right;
+      right: 16px;
+    }
+  
+    .card-subtitle {
+      position: absolute;
+      top: 45%;
+      width: 100%;
+      text-align: right;
+      right: 2px;
+    }
+
+}
+
+.card-md {
+    
+    margin: 5px 0px 0px 0px!important;
+    width: 100%!important;
+}
+
+.card-img{
+
+    position: absolute;
+    width: 100px;
+    min-height: 100px;
+    max-height: auto;
+    left: 1%;
+    top: 7%;
+
+}
+
+#nome_prodotto{
+
+    text-align: center;
+
+}
+
+#container_prezzo_prodotto{
+
+    text-align: center;
+    color: #ff5f00;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.fade {
+    position: relative;
+    height: 3.0em; /* exactly three lines */
+  }
+  .fade:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 1.2em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+  }
+
+  .module {
+    margin: 0 0 1em 0;
+    overflow: hidden;
+  }
+  .module p {
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+  }
+
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+  }
+
+  .image-container {
+
+    position: relative;
+
+}
+.image-container .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    display: none;
+    color: #FFF;
+}
+.image-container .after {
+    display: block;
+}
+
+.strikethrough {
+    position: relative;
+    color: #ff5f00;
+    font-size: 12px;
+  }
+  .strikethrough:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 1px solid;
+    border-color: inherit;
+  
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+  }
+
+  #left{
+
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+
+  }
+
+  #right{
+
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+
+  }
+
+}

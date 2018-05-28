@@ -1,0 +1,202 @@
+<!--
+  Generated template for the ContattiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+          
+          <ion-title><p id="title">Contatti</p></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h2 id="head">Contatta i nostri Punti Vendita EXPERT SOMMA</h2>
+
+  <form (ngSubmit)="logIn()" #loginForm="ngForm" >
+
+      <ion-card *ngIf="messaggio" color='secondary'>
+
+          <ion-card-content>
+          
+            {{messaggio}}
+          
+          </ion-card-content>
+        
+        </ion-card>
+
+        <ion-card *ngIf="errore" color='danger'>
+        
+          <ion-card-content>
+        
+            {{errore}}
+        
+          </ion-card-content>
+        
+        </ion-card>
+
+          <ion-list>
+      
+            <ion-item>
+
+              <ion-label floating>Nominativo: </ion-label>
+
+              <ion-input type="text" value="" autocapitalize="off" name="nominativo" [(ngModel)]="credenziali.nominativo" #nominativo="ngModel"></ion-input>
+
+            </ion-item>
+      
+            <ion-item>
+
+              <ion-label floating>Email: </ion-label>
+
+              <ion-input type="text" value="" name="email" [(ngModel)]="credenziali.email" #email="ngModel"></ion-input>
+              
+            </ion-item>
+
+            <ion-item>
+
+                <ion-label floating>Cellulare: <small>*</small></ion-label>
+  
+                <ion-input type="text" value="" name="cellulare" required [(ngModel)]="credenziali.cellulare" #cellulare="ngModel"></ion-input>
+                
+              </ion-item>
+
+              <ion-item>
+                  <ion-label floating>Punto vendita di riferimento: <small>*</small></ion-label>
+                  <ion-select interface="action-sheet" required [(ngModel)]="credenziali.puntoVendita" name="puntoVendita" #puntoVendita="ngModel">
+                
+                    <ion-option value="{{options.nome}}"  *ngFor="let options of lista_punti_vendita">{{options.nome}}</ion-option>
+                
+                  </ion-select>
+                </ion-item>
+
+              <ion-item>
+
+                  <ion-label floating>Oggetto: <small>*</small></ion-label>
+    
+                  <ion-input type="text" value="" name="oggetto" required [(ngModel)]="credenziali.oggetto" #oggetto="ngModel"></ion-input>
+                  
+                </ion-item>
+
+                <ion-item>
+
+                    <ion-label floating>Testo: <small>*</small></ion-label>
+      
+                    <ion-input type="text" value="" name="testo" required [(ngModel)]="credenziali.testo" #testo="ngModel"></ion-input>
+                    
+                  </ion-item>
+      
+          </ion-list>
+                  
+          <button item-end ion-button color="primary" full [disabled]="!loginForm.form.valid" [ngStyle]="{'background-color': app_color}"  >Contatta</button> 
+
+        </form>
+
+        <h4 id="head">Punti Vendita EXPERT SOMMA</h4>
+
+<ion-list>
+
+  <ion-item>
+
+      <img item-start src="assets/img/store.png" width="20">
+
+      <p>MEGASTORE EXPERT - CASTELLAMMARE DI STABIA</p> 
+      
+      <p id="phone">Tel. 081 801 8481</p>
+  
+      <button item-end ion-button clear (tap)="chiama('0818018481')"><img src="assets/img/phone.png" width="18"></button>  
+
+  </ion-item>
+
+  <ion-item>
+
+      <img item-start src="assets/img/store.png" width="20">
+  
+      <p>STORE EXPERT - CASTELLAMMARE DI STABIA</p>   
+  
+      <button item-end ion-button clear (tap)="chiama('0818018481')"><img src="assets/img/phone.png" width="18"></button>  
+
+      <p id="phone">Tel. 081 871 1326</p>
+
+  </ion-item>
+
+  <ion-item>
+
+      <img item-start src="assets/img/store.png" width="20">    
+
+      <p>CENTRO TELEFONIA - CASTELLAMMARE DI STABIA</p>
+
+      <button item-end ion-button clear (tap)="chiama('0818714885')" ><img src="assets/img/phone.png" width="18"></button>          
+
+      <p id="phone">Tel. 081 871 4885</p>
+
+  </ion-item>
+
+  <ion-item>
+
+      <img item-start src="assets/img/store.png" width="20">    
+
+      <p>MEGASTORE EXPERT - PAGANI - c/c "PEGASO"</p>
+
+      <button item-end ion-button clear (tap)="chiama('0815150292')" ><img src="assets/img/phone.png" width="18"></button>        
+
+      <p id="phone">Tel. 081 515 0292</p>
+
+  </ion-item>
+
+  <ion-item>
+
+      <img item-start src="assets/img/store.png" width="20">
+    
+      <p>MEGASTORE EXPERT - NOCERA SUPERIORE - c/c "NUCERIA"</p>
+  
+      <button item-end ion-button clear (tap)="chiama('08118907533')" ><img src="assets/img/phone.png" width="18"></button>   
+
+      <p id="phone">Tel. 081 189 07533</p>
+
+  </ion-item>
+
+  <ion-item>
+
+      <img item-start src="assets/img/store.png" width="20">
+    
+      <p>MEGASTORE EXPERT - TORRE DEL GRECO - c/c "VESUVIO"</p>                  
+  
+      <button item-end ion-button clear (tap)="chiama('08119483790')" ><img src="assets/img/phone.png" width="18"></button>   
+
+      <p id="phone">Tel. 081 194 83790</p>
+
+  </ion-item>
+
+  <ion-item>
+
+      <img item-start src="assets/img/store.png" width="20">    
+
+      <p>MEGASTORE EXPERT - SALERNO (zona industriale)</p>                                  
+ 
+      <button item-end ion-button clear (tap)="chiama('0893061180')" ><img src="assets/img/phone.png" width="18"></button>
+
+      <p id="phone">Tel. 089 3061180</p>
+
+  </ion-item>
+
+  <ion-item>
+
+      <img item-start src="assets/img/store.png" width="20">
+
+      <p>MEGASTORE EXPERT - BATTIPAGLIA - c/c " IL CASTELLUCCIO"</p>              
+  
+      <button item-end ion-button clear (tap)="chiama('0828304945')" ><img src="assets/img/phone.png" width="18"></button>   
+
+      <p id="phone">Tel. 082 8304945</p>
+
+  </ion-item>
+
+</ion-list>
+
+</ion-content>

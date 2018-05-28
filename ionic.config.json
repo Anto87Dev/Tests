@@ -1,6 +1,8 @@
 {
   "name": "Expert",
-  "app_id": "",
+  "app_id": "e8b982a7",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

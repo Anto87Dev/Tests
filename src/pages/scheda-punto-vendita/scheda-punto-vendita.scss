@@ -1,0 +1,38 @@
+page-scheda-punto-vendita {
+
+    .item-md {
+        
+        padding-left: 0px!important;
+
+    }
+
+    .item-md.item-block .item-inner {
+        
+        padding-right: 0px!important;
+
+    }
+
+    .card-header-md + .card-content-md{
+
+        padding-top: 13px;
+
+    }
+
+    .scroll-content{
+
+        padding: 16px 10px 16px 10px!important;
+
+    }
+
+    #contatti > .item-inner > .input-wrapper{
+
+            height: 45px;
+    }
+
+    .bar-button-default-md{
+
+        color: #fff;
+
+    }
+
+}

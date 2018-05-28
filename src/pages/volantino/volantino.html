@@ -1,0 +1,181 @@
+<ion-header>
+  
+        <ion-navbar>
+      
+            <button ion-button menuToggle>
+        
+                <ion-icon name="menu" style="color:white;"></ion-icon>
+              
+              </button>
+      
+          <ion-title>
+            
+              <img id="img" src="assets/img/logo.png" style="display: block; margin-left: auto; margin-right: auto; width: 30%;">
+      
+          </ion-title> 
+      
+          <ion-buttons start>
+              <button ion-button icon-only >
+                <ion-icon name="md-funnel" style="color:#ffffff;"></ion-icon>
+              </button>
+              <button ion-button icon-only ff5f00>
+                  <ion-icon name="md-repeat" style="color:#ffffff;"></ion-icon>
+                </button>
+                
+            </ion-buttons>
+      
+        </ion-navbar>
+      
+          <ion-toolbar class="search_toolbar">
+      
+            <ion-searchbar (ionInput)="getItems($event)" (ionClear)="onCancel($event)" (ionCancel)="onCancel($event)" showCancelButton="true" (search)="closeKeyboard()" placeholder="Cerca prodotto"></ion-searchbar>      
+            
+              <ion-buttons end>
+      
+                  <button ion-button icon-only (tap)="scan()"><ion-icon name="md-barcode" style="font-size:2.2em; color:#ea5b0c"></ion-icon></button>
+      
+                </ion-buttons>
+      
+          </ion-toolbar>
+      
+          
+      
+      </ion-header>
+      
+      <!-- class="has-header" [style.marginTop.px]="margin" [style.marginBottom.px]="margin" -->
+      
+      <ion-content id="content">
+    
+        <button ion-button full [hidden]="shared.getCountSelectedItem() === 0" class="toolbar_mail" (tap)="confronta()">
+      
+            <ion-icon name="md-git-compare" style="margin-right:10px;"></ion-icon>
+    
+            <span *ngIf="shared.getCountSelectedItem() == 0 || shared.getCountSelectedItem() > 1">{{shared.getCountSelectedItem()}} Prodotti selezionati</span>
+            
+            <span *ngIf="shared.getCountSelectedItem() == 1">{{shared.getCountSelectedItem()}} Prodotto selezionato</span>
+     
+        </button>
+    
+          <ion-grid>
+    
+               
+              <ion-row *ngFor='let index of prodotti_ricerca; let i = index; let even = even' >
+                
+                <ion-col id="left" *ngIf="even && prodotti_ricerca[i] !== undefined" (click)="schedaProdotto(prodotti_ricerca[i])">
+                    
+                        <div id="container">
+    
+                                <div class="image-container" *ngIf="even && prodotti_ricerca[i].volantino !== false">
+                                    
+                                    <img id="img" src="{{prodotti_ricerca[i].immagine}}" />
+                                    
+                                    <img class="after"  src="assets/img/F655.png" />
+                                    
+                                </div>   
+                                
+                                <div class="image-container" *ngIf="even && prodotti_ricerca[i].volantino == false">
+                                    
+                                        <img id="img" src="{{prodotti_ricerca[i].immagine}}" />
+                                
+                                    
+                                </div>  
+        
+                           <div class="module fade">
+                                        
+                                    <p>{{prodotti_ricerca[i].nome}}</p>
+                                     
+                                </div>
+    
+                                <div id="container_prezzo_prodotto">
+                                       
+                                    <span id="prezzo" *ngIf="prodotti_ricerca[i].sconto != 0">{{prezzo_scontato(prodotti_ricerca[i].prezzo, prodotti_ricerca[i].sconto)}} €</span>
+                        
+                                        <span id="sconto_1" *ngIf="prodotti_ricerca[i].sconto !== 0">-{{prodotti_ricerca[i].sconto}}% </span><span class="strikethrough" *ngIf="prodotti_ricerca[i].sconto !== 0">{{prodotti_ricerca[i].prezzo}} €</span>
+        
+                                        <span id="prezzo_1" *ngIf="prodotti_ricerca[i].sconto == 0">{{prodotti_ricerca[i].prezzo}} €</span>
+                            
+                                </div>
+    
+                                <div style="text-align: center; margin-top: 20px;">
+                            
+                                        <button ion-button icon-only clear (click)="share(prodotti_ricerca[i])"><ion-icon name="md-share"></ion-icon></button>
+                                
+                                        <button ion-button icon-only clear (click)="addWishlist(prodotti_ricerca[i], i)" *ngIf="!prodotti_ricerca[i].wishlist"><ion-icon id="heart_{{i}}" name="md-heart"></ion-icon></button>
+                                
+                                        <button ion-button icon-only clear (click)="addWishlist(prodotti_ricerca[i], i)" *ngIf="prodotti_ricerca[i].wishlist"><ion-icon id="heart_{{i}}" name="md-heart" style="color:#d9d9d9;"></ion-icon></button>        
+                                        
+                                        <button ion-button icon-only clear id="compareButton_{{i}}" (click)="addToCompare(prodotti_ricerca[i], i)" *ngIf="!prodotti_ricerca[i].compare"><ion-icon name="md-git-compare"></ion-icon></button>
+                                
+                                        <button ion-button icon-only clear id="compareButton_{{i}}" (click)="addToCompare(prodotti_ricerca[i], i)" *ngIf="prodotti_ricerca[i].compare"><ion-icon name="md-git-compare" style="color:#d9d9d9;"></ion-icon></button>
+                                
+                                    </div>
+        
+                        </div>
+            
+                </ion-col>
+               
+                <ion-col id="right" (click)="schedaProdotto(prodotti_ricerca[i+1])" *ngIf="even && prodotti_ricerca[i+1] !== undefined">
+                        
+                    <div id="container">
+    
+                            <div class="image-container" *ngIf="even && prodotti_ricerca[i+1].volantino !== false">
+                                
+                                <img id="img" src="{{prodotti_ricerca[i+1].immagine}}" />
+                                
+                                <img class="after"  src="assets/img/F655.png" />
+                                
+                            </div>   
+                            
+                            <div class="image-container" *ngIf="even && prodotti_ricerca[i+1].volantino == false">
+                                    
+                                <img id="img" src="{{prodotti_ricerca[i+1].immagine}}" />
+                                
+                            </div>  
+    
+                       <div class="module fade">
+                                    
+                                <p>{{prodotti_ricerca[i+1].nome}}</p>
+                                 
+                            </div>
+    
+                            <div id="container_prezzo_prodotto">
+                                       
+                                <span id="prezzo" *ngIf="prodotti_ricerca[i+1].sconto != 0">{{prezzo_scontato(prodotti_ricerca[i+1].prezzo, prodotti_ricerca[i+1].sconto)}} €</span>
+                    
+                                    <span id="sconto_1" *ngIf="prodotti_ricerca[i+1].sconto !== 0">-{{prodotti_ricerca[i+1].sconto}}% </span><span class="strikethrough" *ngIf="prodotti_ricerca[i+1].sconto !== 0">{{prodotti_ricerca[i+1].prezzo}} €</span>
+    
+                                    <span id="prezzo_1" *ngIf="prodotti_ricerca[i+1].sconto == 0">{{prodotti_ricerca[i+1].prezzo}} €</span>
+                        
+                            </div>
+            
+                            <div style="text-align: center; margin-top: 20px;">
+                        
+                                   <button ion-button icon-only clear (click)="share(prodotti_ricerca[i+1])"><ion-icon name="md-share"></ion-icon></button>
+                            
+                                    <button ion-button icon-only clear (click)="addWishlist(prodotti_ricerca[i+1], i+1)" *ngIf="!prodotti_ricerca[i+1].wishlist"><ion-icon id="heart_{{i+1}}" name="md-heart"></ion-icon></button>
+                            
+                                    <button ion-button icon-only clear (click)="addWishlist(prodotti_ricerca[i+1], i+1)" *ngIf="prodotti_ricerca[i+1].wishlist"><ion-icon id="heart_{{i+1}}" name="md-heart" style="color:#d9d9d9;"></ion-icon></button>        
+                                    
+                                    <button ion-button icon-only clear id="compareButton_{{i+1}}" (click)="addToCompare(prodotti_ricerca[i+1], i+1)" *ngIf="!prodotti_ricerca[i+1].compare"><ion-icon name="md-git-compare"></ion-icon></button>
+                            
+                                    <button ion-button icon-only clear id="compareButton_{{i+1}}" (click)="addToCompare(prodotti_ricerca[i+1], i+1)" *ngIf="prodotti_ricerca[i+1].compare"><ion-icon name="md-git-compare" style="color:#d9d9d9;"></ion-icon></button>
+                                </div>
+    
+                    </div>
+                    
+    
+                    
+    
+                </ion-col>
+              
+            </ion-row>
+    
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+                  </ion-infinite-scroll>
+            
+        </ion-grid>
+        
+      
+      </ion-content>
+      

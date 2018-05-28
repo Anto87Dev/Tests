@@ -1,0 +1,50 @@
+page-about {
+
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        
+        color: #ffffff;
+
+    }
+
+    #about_text{
+
+        text-align: justify;
+        font-size: 1.5rem;
+    }
+
+    #about_text_3{
+
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    #title{
+
+        /* color: #ff6f18;
+        font-weight: bold;
+        background-color: #ffefd4;
+        padding: 10px;
+        font-size:2.4rem;        
+        text-align: center; */
+
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        
+    }
+
+     #about_text_2{
+
+        color: #ff6f18;
+        font-weight: bold;
+        background-color: #ffefd4;
+        font-size:2.0rem;
+        padding: 10px;
+        text-align: center;
+        padding: 8px 0;
+        margin: 2px 0;
+    }
+
+}

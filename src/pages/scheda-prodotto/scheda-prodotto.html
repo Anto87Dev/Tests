@@ -1,0 +1,148 @@
+<!--
+  Generated template for the SchedaProdottoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    
+    <ion-title>
+      
+        <p style="color:white;">Scheda prodotto</p>
+    
+    </ion-title>
+  
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+        <button ion-button full [hidden]="shared.getCountSelectedItem() === 0" class="toolbar_mail" (tap)="confronta()">
+
+                <ion-icon name="md-git-compare" style="margin-right:10px;"></ion-icon>
+            
+                <span *ngIf="shared.getCountSelectedItem() == 0 || shared.getCountSelectedItem() > 1">{{shared.getCountSelectedItem()}} Prodotti selezionati</span>
+                
+                <span *ngIf="shared.getCountSelectedItem() == 1">{{shared.getCountSelectedItem()}} Prodotto selezionato</span>
+            
+        </button>
+
+      <ion-card>
+  
+          <ion-card-header id="header">
+              
+              {{prodotto.nome}}
+              
+            </ion-card-header>    
+          
+              <ion-slides pager paginationType="bullets" effect="slide" loop="true" autoplay="3000" speed="1000">
+
+                  <ion-slide>
+                      <img id="img" [src]="prodotto.immagine">
+                  </ion-slide>
+                
+                  <ion-slide >
+                      <img id="img" [src]="prodotto.immagine">
+                  </ion-slide>
+                
+                  <ion-slide >
+                      <img id="img" [src]="prodotto.immagine">
+                  </ion-slide>
+                
+                </ion-slides> 
+      
+          <ion-card-content>
+           
+            <p style="float:left; font-size:15px;">{{prodotto.descrizione}}</p>
+      
+          </ion-card-content>
+      
+          <div style="display:inline;">
+          
+            <p id="prezzo">{{prodotto.prezzo}} €</p>
+      
+          </div>
+      
+        </ion-card>
+
+        <button ion-button full style="font-size: 1.6rem;">Controlla disponibilità</button>
+        
+        <button ion-button full style="font-size: 1.6rem;">Prenota e ritira</button>
+
+        <div style="text-align:center; margin-top:10px;">
+
+            <button ion-button icon-only clear (click)="share()" style="height: 4.5rem; font-size: 1.8rem;"><ion-icon name="md-share"></ion-icon></button>
+    
+            <button ion-button icon-only clear (click)="addWishlist(prodotto)" style="height: 4.5rem; font-size: 1.8rem;"><ion-icon id="heart" name="md-heart-outline"></ion-icon></button>
+            
+            <button ion-button icon-only clear (click)="addToCompare(prodotto)" style="height: 4.5rem; font-size: 1.8rem;"><ion-icon id="compareButton" name="md-git-compare"></ion-icon></button>
+    
+        </div>
+
+        <ion-list>
+
+            <button ion-item style="color:#ff5f00; font-weight:bold;" [ngClass]="{'section-active': isOpen, 'section': !isOpen}" (tap)="open(1)">
+
+                <ion-icon name="md-list" item-start style="color:#ff5f00;"></ion-icon>
+                <ion-icon item-right name="md-add" *ngIf="!isOpen"></ion-icon>
+                <ion-icon item-right name="md-remove" *ngIf="isOpen"></ion-icon>
+                Caratteristiche
+
+            </button>
+
+            <ion-list *ngIf="isOpen">
+
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+            
+                </ion-list>
+
+            <button ion-item style="color:#ff5f00; font-weight:bold;" [ngClass]="{'section-active': isOpen1, 'section': !isOpen1}" (tap)="open(2)">
+    
+                <ion-icon name="md-document" item-start style="color:#ff5f00;"></ion-icon>
+                <ion-icon item-right name="md-add" *ngIf="!isOpen1"></ion-icon>
+                <ion-icon item-right name="md-remove" *ngIf="isOpen1"></ion-icon>
+                Descrizione
+
+            </button>
+
+            <ion-list *ngIf="isOpen1">
+
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+            
+                </ion-list>
+
+            <button ion-item style="color:#ff5f00; font-weight:bold;" [ngClass]="{'section-active': isOpen2, 'section': !isOpen2}" (tap)="open(3)">
+
+                <ion-icon name="md-settings" item-start style="color:#ff5f00;"></ion-icon>
+                <ion-icon item-right name="md-add" *ngIf="!isOpen2"></ion-icon>
+                <ion-icon item-right name="md-remove" *ngIf="isOpen2"></ion-icon>
+                Specifiche tecniche
+
+            </button>
+
+            <ion-list *ngIf="isOpen2">
+
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+                    <div ion-item class="child"><span> - </span></div>
+            
+                </ion-list>
+
+            
+        </ion-list>
+
+</ion-content>

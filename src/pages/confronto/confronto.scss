@@ -1,0 +1,95 @@
+page-confronto {
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+     
+        color: #fff;
+
+    }
+
+    #divProd{
+
+        overflow:hidden; 
+        
+        text-overflow:ellipsis;
+
+        float: right;
+
+    }
+
+    #prezzo{
+    
+        text-align: center;
+
+        color: #ff5f00;
+
+        font-size: 25px;
+
+        font-weight: bold;
+
+        margin-top: 6px;
+
+        margin-right: 5px;
+        
+        margin-bottom: 10px;
+    
+    }
+
+    .scroll-content {
+        
+        padding: 0px!important;
+    
+    }
+
+    #label{
+
+        background-color: #ff5f00;
+
+        color: white;
+
+        font-weight: bold;
+
+    }
+
+    #element_row{
+
+        border-bottom: 1px solid #fff;
+
+    }
+
+    #element_col{
+
+        border-bottom: 1px solid #000;
+
+    }
+
+    #title{
+
+        //margin: 3px 3px 3px 30px; 
+        
+        font-size: 20px;
+
+        color:#ff5f00;
+        
+        font-weight:bold;
+
+        margin:auto;
+
+    }
+
+    #row_title{
+
+        background-color:#d9d9d9; 
+        
+        height: 30px;
+
+    }
+
+    #rm_button{
+
+        height: 1.0rem; 
+        
+        font-size: 1.0rem;
+
+    }
+
+}
